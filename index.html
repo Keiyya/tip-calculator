@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="images/favicon-32x32.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Tip Calculator</title>
+  </head>
+  <body class="bg-lightCyan">
+    <main>
+      <div
+        class="h-screen w-full flex flex-col items-center justify-center space-y-3 p-5"
+      >
+        <h1 class="uppercase text-darkGrayishCyan">
+          spli<br />
+          tter
+        </h1>
+        <div
+          class="bg-white p-4 rounded-xl grid grid-cols-1 gap-5 max-w-screen-md md:grid-cols-2"
+        >
+          <div class="flex flex-col space-y-4">
+            <!-- Bill Input -->
+            <div class="relative">
+              <h3 class="text-sm text-darkGrayishCyan">Bill</h3>
+              <input
+                type="number"
+                min="0"
+                class="text-right w-full text-darkCyan placeholder-darkCyan bg-lightCyan rounded-sm px-2 outline-none"
+                placeholder="142.55"
+                id="bill-input"
+              />
+              <img
+                src="images/icon-dollar.svg"
+                class="absolute top-1/2 left-1"
+                alt=""
+              />
+            </div>
+            <!-- Tip Section -->
+            <div class="grid grid-cols-2 gap-2 md:grid-cols-3">
+              <button class="btn" id="5">5%</button>
+              <button class="btn" id="10">10%</button>
+              <button class="btn" id="15">15%</button>
+              <button class="btn" id="25">25%</button>
+              <button class="btn" id="50">50%</button>
+              <input
+                id="custom"
+                type="text"
+                class="text-right text-darkGrayishCyan px-2 bg-lightGrayishCyan outline-none"
+                placeholder="Custom"
+              />
+            </div>
+            <!-- People Input -->
+            <div class="relative">
+              <div class="flex justify-between">
+                <h3 class="text-sm text-darkGrayishCyan">Number of people</h3>
+                <p class="error-msg text-sm text-red-400 hidden">
+                  Can't be zero
+                </p>
+              </div>
+              <input
+                type="number"
+                min="0"
+                class="text-right w-full text-darkCyan placeholder-darkCyan bg-lightCyan rounded-sm px-2 outline-none"
+                placeholder="5"
+                id="people-input"
+              />
+              <img
+                src="images/icon-person.svg"
+                class="absolute top-1/2 left-1"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="bg-darkCyan text-white rounded-md p-4 flex flex-col">
+            <div class="flex justify-between space-y-4">
+              <div class="flex flex-col">
+                <h3>Tip Amount</h3>
+                <h4 class="text-sm text-darkGrayishCyan">/ person</h4>
+              </div>
+              <!-- Amount -->
+              <h3 class="text-cyan">$<span id="tip-person">4.27</span></h3>
+            </div>
+            <div class="flex justify-between">
+              <div class="flex flex-col">
+                <h3>Total</h3>
+                <h4 class="text-sm text-darkGrayishCyan">/ person</h4>
+              </div>
+              <!-- Amount -->
+              <h3 class="text-cyan">$<span id="tip-total">32.79</span></h3>
+            </div>
+            <button
+              class="bg-cyan text-darkCyan w-full rounded-md mt-16 uppercase text-base py-2 hover:bg-lightCyan"
+              id="reset"
+            >
+              Reset
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
